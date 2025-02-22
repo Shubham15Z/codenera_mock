@@ -1,0 +1,6 @@
+Q1 Introduction?
+Q2 What is entry control loop and exit control loop?
+Q3 What is static keyword, how it is used in memory management?
+Q4 What is return type of constructor? What will happen if we add return type?
+Q5 What is difference between break and continue?
+Q6 What is difference between 1D array and 2D array?

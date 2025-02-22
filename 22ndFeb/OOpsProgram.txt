@@ -1,0 +1,128 @@
+/*
+ Created Abstract class and abstract method to achieve Abstraction
+ Added private variable and getter setter methods to achieve encapsulation
+ */
+
+package feb.mock2.pkg;
+
+abstract class Person 
+{
+	private String name;
+	private int age;
+	
+	public Person(String name, int age)
+	{
+		this.name = name;
+		this.age = age;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public int getAge()
+	{
+		return age;
+	}
+	
+	public void steName(String name)
+	{
+		this.name = name;
+	}
+	
+	public void setAge(int age)
+	{
+		this.age = age;
+	}
+	
+	abstract void displayDetails();
+}
+
+
+---------------------------------------------------------
+
+/*
+created Student class from Person class to achieve inheritance
+Achieved polymophism by overriding displayDetails() method from Person class into Student class
+ */
+
+package feb.mock2.pkg;
+
+public class Student extends Person
+{
+	private int sId;
+	private String course;
+	
+	public Student(String name, int age, int sid, String course)
+	{
+		super(name, age);
+		this.sId = sid;
+		this.course = course;
+	}
+	
+	public int getSid()
+	{
+		return sId;
+	}
+	
+	public String getCourse()
+	{
+		return course;
+	}
+	
+	public void setSid(int sid)
+	{
+		this.sId = sid;
+	}
+	
+	public void setCourse(String course)
+	{
+		this.course = course;
+	}
+	
+	void displayDetails()
+	{
+		System.out.println("Student Id : "+sId);
+		System.out.println("Student name : "+getName());
+		System.out.println("Student age : "+getAge());
+		System.out.println("Student course : "+course);
+	}
+}
+
+
+--------------------------------------------------------------------
+
+/*
+ Achieved Upcasting or dynamic method dispatch by referencing parent class to created base class object
+ To achieve runtime polymorphism.
+ */
+package feb.mock2.pkg;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		Student s1 = new Student("Rahul Sharma", 22, 70101, "Python");
+		s1.displayDetails();
+		System.out.println("-----------------------------------------");
+		Person s2 = new Student("Ajay ROy", 25, 50301, "Java"); // Upcasting
+		s2.displayDetails();
+	}
+}
+
+
+-----------------------------------------------------------------------------------
+
+
+Output:
+
+Student Id : 70101
+Student name : Rahul Sharma
+Student age : 22
+Student course : Python
+-----------------------------------------
+Student Id : 50301
+Student name : Ajay Roy
+Student age : 25
+Student course : Java
